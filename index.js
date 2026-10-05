@@ -1,46 +1,41 @@
 document.title = "Haamu Corporation";
 
-const style = document.createElement("style");
-style.textContent = `
-  * { box-sizing: border-box; }
-  html, body { width: 100%; height: 100%; margin: 0; }
-  body {
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-    background:
-      radial-gradient(circle at 50% 50%, rgba(80, 120, 255, 0.12), transparent 42%),
-      linear-gradient(145deg, #070a12 0%, #0b1020 50%, #05070c 100%);
-    color: #f4f7ff;
-    font-family: Inter, "Segoe UI", Arial, sans-serif;
-  }
-  .haamu {
-    position: relative;
-    padding: 2rem 3rem;
-    text-align: center;
-    font-size: clamp(2rem, 7vw, 6rem);
-    font-weight: 300;
-    line-height: 1;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    text-indent: 0.22em;
-    text-shadow: 0 0 18px rgba(150,185,255,.32), 0 0 52px rgba(90,125,255,.18);
-  }
-  .haamu::after {
-    content: "";
-    position: absolute;
-    left: 20%;
-    right: 20%;
-    bottom: .8rem;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, currentColor, transparent);
-    opacity: .4;
-  }
-`;
+Object.assign(document.documentElement.style, {
+  width: "100%",
+  height: "100%",
+  margin: "0",
+  background: "#070a12"
+});
+
+Object.assign(document.body.style, {
+  width: "100%",
+  minHeight: "100vh",
+  margin: "0",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  overflow: "hidden",
+  background: "radial-gradient(circle at center, #121d3a 0%, #090e1c 42%, #04060b 100%)",
+  color: "#f4f7ff",
+  fontFamily: '"Segoe UI", Arial, sans-serif'
+});
 
 const main = document.createElement("main");
-main.className = "haamu";
-main.textContent = "Haamu Corporation";
+main.textContent = "HAAMU CORPORATION";
 
-document.head.append(style);
+Object.assign(main.style, {
+  maxWidth: "92vw",
+  padding: "2rem",
+  textAlign: "center",
+  fontSize: "clamp(1.6rem, 7vw, 5.5rem)",
+  fontWeight: "300",
+  lineHeight: "1.2",
+  letterSpacing: "0.22em",
+  textIndent: "0.22em",
+  textTransform: "uppercase",
+  color: "#f3f7ff",
+  textShadow: "0 0 12px rgba(185,210,255,.75), 0 0 36px rgba(80,125,255,.45)",
+  borderBottom: "1px solid rgba(185,210,255,.28)"
+});
+
 document.body.replaceChildren(main);
