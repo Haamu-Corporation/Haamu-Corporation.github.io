@@ -1,41 +1,13 @@
-document.title = "Haamu Corporation";
+document.title = "HAAMU CORPORATION";
 
-Object.assign(document.documentElement.style, {
-  width: "100%",
-  height: "100%",
-  margin: "0",
-  background: "#070a12"
-});
+const root = document.documentElement;
+const body = document.body;
 
-Object.assign(document.body.style, {
-  width: "100%",
-  minHeight: "100vh",
-  margin: "0",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  overflow: "hidden",
-  background: "radial-gradient(circle at center, #121d3a 0%, #090e1c 42%, #04060b 100%)",
-  color: "#f4f7ff",
-  fontFamily: '"Segoe UI", Arial, sans-serif'
-});
+root.style.cssText = "width:100%;height:100%;margin:0;background:#05070d;";
+body.style.cssText = "width:100%;height:100vh;margin:0;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(circle at 50% 50%,#172449 0%,#0a1020 40%,#04060b 100%);color:#f4f8ff;font-family:Arial,sans-serif;";
 
-const main = document.createElement("main");
-main.textContent = "HAAMU CORPORATION";
+const title = document.createElement("div");
+title.textContent = "HAAMU CORPORATION";
+title.style.cssText = "max-width:90vw;padding:32px;text-align:center;font-family:Arial,sans-serif;font-size:clamp(28px,7vw,88px);font-weight:300;line-height:1.15;letter-spacing:.22em;text-indent:.22em;color:#f4f8ff;text-shadow:0 0 14px rgba(190,215,255,.85),0 0 48px rgba(80,125,255,.55);border-bottom:1px solid rgba(190,215,255,.35);";
 
-Object.assign(main.style, {
-  maxWidth: "92vw",
-  padding: "2rem",
-  textAlign: "center",
-  fontSize: "clamp(1.6rem, 7vw, 5.5rem)",
-  fontWeight: "300",
-  lineHeight: "1.2",
-  letterSpacing: "0.22em",
-  textIndent: "0.22em",
-  textTransform: "uppercase",
-  color: "#f3f7ff",
-  textShadow: "0 0 12px rgba(185,210,255,.75), 0 0 36px rgba(80,125,255,.45)",
-  borderBottom: "1px solid rgba(185,210,255,.28)"
-});
-
-document.body.replaceChildren(main);
+body.replaceChildren(title);
